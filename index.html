@@ -3,32 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <title>Вся страница в PDF</title>
+<link rel="stylesheet" href="style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
 <!-- МАКЕТ СОДЕРЖИМОГО -->
-<h1>Привет, мир!</h1>
-<p>Это пример.</p>
+<h1>Тестируем сохранение PDF файла</h1>
+<p>Это пример!</p>
 <!-- ВСЮ СТРАНИЦУ В PDF -->
 
+<style>
+  .my_button {
+      width: 90px;
+      height: 90px;
+  }
+  </style>
 
 <fieldset>
-  <legend>Select a maintenance drone:</legend>
+  <legend>Форма стопы (продольная арка)</legend>
 
   <div>
+  
+ 
     <input type="radio" id="huey" name="drone" value="huey" checked />
-    <label for="huey">Huey</label>
+  
+    <label for="huey">Нормальная </label>
   </div>
 
   <div>
     <input type="radio" id="dewey" name="drone" value="dewey" />
-    <label for="dewey">Dewey</label>
+    <label for="dewey">Низкая (плоская)</label>
+  </div>
+  <div>
+    <input type="radio" id="dewey" name="drone" value="dewey" />
+    <label for="dewey">Низкая (плоская)</label>
   </div>
 
-  <div>
-    <input type="radio" id="louie" name="drone" value="louie" />
-    <label for="louie">Louie</label>
-  </div>
+  <label for="name">Введите вааши жалобы:</label>
+
+  <input class="heighttext" type="text" id="name" name="name" required minlength="40" maxlength="800" height = "150"; size="100" />
+  
+
+
+
 </fieldset>
 <script>
 function toPDF () {
@@ -37,6 +54,6 @@ html2pdf()
 .save();
 }
 </script> 
-<button onclick="toPDF()">Создать PDF</button>
+<button onclick="toPDF()"  class="my_button" >Сохранить данные в PDF</button>
 </body>
 </html>
